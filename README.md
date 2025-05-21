@@ -187,7 +187,7 @@ Exposición de métricas en formato Prometheus.
 1. Clona el repositorio:
 
 ```
-git clone https://github.com/tu_usuario/client-service.git
+git clone git@github.com:ralphdoe/client-service.git
 
 ```
 
