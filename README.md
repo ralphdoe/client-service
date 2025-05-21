@@ -1,4 +1,3 @@
-Prueba la IA directamente en tus aplicaciones favoritas … Usa Gemini para generar borradores y pulir contenido, y disfruta de Gemini Pro con acceso a la IA de nueva generación de Google por $ 79.000,00 0 COP durante 1 mes
 # Client Service - Microservicio de Gestión de Clientes
 
 Este proyecto es un microservicio desarrollado en Java con Spring Boot, siguiendo principios de arquitectura hexagonal. Permite gestionar clientes, calcular métricas y emitir eventos asíncronos, cumpliendo con los requerimientos del reto técnico.
