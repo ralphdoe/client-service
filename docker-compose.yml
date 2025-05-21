@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  client-service:
+    build: .
+    container_name: client-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - rabbitmq
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/clientdb
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: guest
+      SPRING_RABBITMQ_PASSWORD: guest
+      RABBITMQ_EXCHANGE: client.exchange
+      RABBITMQ_ROUTING_KEY: client.created
+      RABBITMQ_QUEUE: client.created.queue
+      JWT_SECRET: verysecretkeythatshouldbelongandcomplex123456
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+
+    expose:
+      - "5432"
+    environment:
+      POSTGRES_DB: clientdb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672" # UI: http://localhost:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+volumes:
+  postgres_data:
