@@ -38,6 +38,13 @@ Este proyecto es un microservicio desarrollado en Java con Spring Boot, siguiend
 
 ---
 
+## Documentación con Swagger UI
+
+```
+http://localhost:8080/swagger-ui/index.html
+
+```
+
 ## Autenticación
 
 ```
@@ -159,13 +166,6 @@ Cada vez que se crea un cliente, se envía un evento asíncrono con esta estruct
 - Cola configurada: `client.queue` (ver `application.yml`)
 
 ---
-
-## Swagger UI
-
-```
-http://localhost:8080/swagger-ui/index.html
-
-```
 
 Explora y prueba todos los endpoints desde la interfaz web.
 
